@@ -40,12 +40,12 @@ public class WikipediaSearchNavigationTest {
 
         List<String> suggestions = page.getSuggestions();
 
-        // Проверка: первые саджесты начинаются на запрос
+        // Проверяем, что первые саджесты начинаются на запрос
         assertFalse(suggestions.isEmpty(), "The sagets did not appear");
         assertTrue(suggestions.get(0).toLowerCase().startsWith(VALID_QUERY.toLowerCase()),
                 "The first suggestion does not begin with a request");
 
-        // Проверка: поисковый запрос выделен жирным
+        // Проверяем, что поисковый запрос выделен жирным
         List<String> rawHtmls = page.getRawSuggestionsHtml();
         
         System.out.println("HTML suggestions:");
@@ -98,9 +98,9 @@ public class WikipediaSearchNavigationTest {
         // Получаем заголовок страницы
         String heading = $("h1").text().trim();
 
-        // Проверка: заголовок должен содержать текст первого саджеста
+        // Проверяем, что заголовок содержит текст первой подсказки
         assertTrue(heading.contains(firstSuggestion),
-                "Заголовок страницы не содержит название статьи из первого саджеста. Ожидалось: " + firstSuggestion + ", было: " + heading);
+                "The page title does not contain the article title from the first suggestion. Expected: " + firstSuggestion + ", was: " + heading);
     }
 
 
@@ -123,7 +123,7 @@ public class WikipediaSearchNavigationTest {
                 $(By.id("firstHeading")).getText().toLowerCase().contains("результаты поиска")
         );
 
-        // Проверка, что мы действительно на странице поиска
+        // Проверяем, что мы действительно на странице поиска
         String currentUrl = WebDriverRunner.url();
         assertTrue(currentUrl.contains("search="),
                 "Expected to be on search results page, but was: " + currentUrl);
@@ -137,12 +137,10 @@ public class WikipediaSearchNavigationTest {
 
         /*
          * Причина:
-         * Ссылка "Поиск страниц, содержащих..." появляется только при **ручном** вводе запроса с клавиатуры.
-         * При программном вводе текста (через setValue(), sendKeys(), JavaScript и даже по одному символу)
+         * Ссылка "Поиск страниц, содержащих..." появляется только при ручном вводе запроса с клавиатуры.
+         * При программном вводе текста (через setValue() и sendKeys())
          * эта подсказка не появляется.
          *
-         * Вероятно, это связано с нативной обработкой событий на клавиатуре,
-         * которую сложно или невозможно эмулировать средствами WebDriver.
          */
 
         fail("We cannot automate the test: the 'Search pages containing...' element appears only when entered manually.");

@@ -14,18 +14,19 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.CollectionCondition.size;
 
 public class WikipediaSearchPage {
-
+    
+    // Тестовые данные
+    private static final String TEST_URL = "https://ru.wikipedia.org";
+    
     // Элементы
     private final SelenideElement searchInput = $("#searchInput");
-    private final SelenideElement suggestionBox = $(".suggestions-results");
-    private final SelenideElement searchFooterLink = $(".suggestions-special");
     private final ElementsCollection suggestions = $$(".suggestions-results a.mw-searchSuggest-link");
 
     // ДЕЙСТВИЯ
 
     // Открыть главную страницу Википедии
     public void openMainPage() {
-        open("https://ru.wikipedia.org");
+        open(TEST_URL);
     }
 
     // Ввести текст в строку поиска

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: tests.WikipediaSearchNavigationTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 9.697 s <<< FAILURE! -- in tests.WikipediaSearchNavigationTest
-tests.WikipediaSearchNavigationTest.clickingSearchContainingLinkIsNotAutomatable -- Time elapsed: 0.271 s <<< FAILURE!
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 15.45 s <<< FAILURE! -- in tests.WikipediaSearchNavigationTest
+tests.WikipediaSearchNavigationTest.clickingSearchContainingLinkIsNotAutomatable -- Time elapsed: 2.092 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: We cannot automate the test: the 'Search pages containing...' element appears only when entered manually.
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
 	at org.junit.jupiter.api.Assertions.fail(Assertions.java:134)
