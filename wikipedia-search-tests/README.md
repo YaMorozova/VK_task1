@@ -13,7 +13,7 @@ UI автотесты для страницы поиска на [русской 
 
 ### 1. Клонируй репозиторий
 
-git clone https://github.com/YaMorozova/VK_task1/wikipedia-search-tests.git<br>
+git clone https://github.com/YaMorozova/VK_task1.git<br>
 cd wikipedia-search-tests
 
 ### 2. Запусти тесты
